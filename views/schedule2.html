@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일정 추가2</title>
+    <link rel="stylesheet" href="/public/css/common.css">
+    <link rel="stylesheet" href="/public/css/schedule2.css">
+
+    <script>
+        function login() {
+                var id = document.querySelector('#id');
+                var pw = document.querySelector('#pw');
+
+                if (id.value == "" || pw.value == "") {
+                    alert("로그인 할 수 없습니다.")
+                }
+                else {
+                    location.href = 'index.html';
+                }
+            }
+
+        function add() {
+            alert('일정이 추가되었습니다.')
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="loginBar">
+            <div class="loginBarBox">
+                <div>
+                    <label> 아이디 : <input id="id" type="text"></label>
+                    <label> 비밀번호 : <input id="pw" type="text"></label>
+                </div>
+                <div>
+                    <!-- 회원가입 클릭시 join.html (회원가입 페이지)로 이동 -->
+                    <a href="join.html"><input type="button" value="회원가입"></a>
+                    <input type="button" value="로그인" onclick="login();">
+                </div>
+            </div>
+        </div>
+        <div class="nameBar">
+            <p>성신한 알바</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="addSchedule">
+            <input type="button" id="btnSchedule" value="채팅">
+        </div>
+        <div class="addSchedule2">
+            <input type="button" id="btnSchedule" value="일정추가">
+        </div>
+    </nav>
+    
+    <aside>
+        <p>알람창</p>
+        <div class=alertBox>
+        </div>
+    </aside>
+    
+    <section id="schedule" align="center">
+        <form method="post">
+            <h1 align="center">일정 추가</h1>
+            <input type="date" name="date"> <!--캘린더에서 날짜 클릭하면 그대로 불려오게-->
+            <br><br><br>
+            <div class="two" style="float:left">
+            
+                <h3 align="center">② 추가 정보 입력하기</h3>
+                <hr>
+                <br>
+            
+                <label style="float: left;">
+                    연장수당
+                </label>
+                <br>
+                <input type="number" id="over" name="over" style="width: 89%;">원
+            
+                <br><br>
+            
+                <label style="float: left;">
+                    야간수당
+                </label>
+                <br>
+                <input type="number" id="night" name="night" style="width: 89%;">원
+            
+                <br><br>
+            
+                <label style="float: left;">
+                    휴일수당
+                </label>
+                <br>
+                <input type="number" id="holiday" name="holiday" style="width: 89%;">원
+
+                <br><br>
+            
+                <label style="float: left;">
+                    추가수당
+                </label>
+                <br>
+                <input type="number" id="extra" name="extra" style="width: 89%;">원
+
+                <br><br>
+                <hr>
+                <!--일급 계산해서 [] 안에 보여주게 처리(함수 아직 못만듦)-->
+                <h4 style="text-align: right;">일급 [계산]원</h4>
+                <br>
+                
+                <input type="button" value="이전" onclick="location.href='schedule1.html'" style="float:left">
+                <input type="submit" value="추가" onclick="add()" style="float:right">
+                <br><br><br><br>
+            </div>
+        </form>
+    </section>
+</body>
+</html>

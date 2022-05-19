@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일급 계산</title>
+
+    <style>
+        #calculatior {
+            width: 300px;
+            height: 250px;
+        }
+
+        .result {
+            width:250px;
+            height:250px;
+            margin-left: 100px;
+        }
+
+        #wrapper {
+            width: 700px;
+            height: 200px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -350px;
+            margin-top: -100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="calculator" style="float:left">
+            <form name="pricecal">
+                <p>
+                    <label>
+                        시급 :
+                        <input type="number" name="price">
+                        <input type="checkbox" name="min" value="9160">최저시급
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        일일 근무시간 :
+                        <input type="number" name="price">                        
+                    </label>
+                </p>
+                <p>
+                    <label for="rtime">휴게시간 :</label>
+                    <input type="text" id="rtime">
+                </p>
+                <p>
+                    <input type="button" value="계산하기">
+                </p>
+                <div id="resoltdv"></div>
+            </form>
+        </div>
+    
+        <div class="result" style="float: left;" text-align="center">
+            일급
+            <hr>
+            <div style="text-align: right;">
+                0원
+            </div>
+            <!--<form name="pricecal" id="pricecal">
+                <p>
+                    <label for="price">시급 :</label>
+                    <input type="text" id="price">
+                </p>
+                <p>
+                    <label for="wday">일한날짜 :</label>
+                    <input type="text" id="wday">
+                </p>
+                <p>
+                    <label for="wtime">일한시간 :</label>
+                    <input type="text" id="wtime">
+                </p>
+                <p>
+                    <label for="rtime">휴게시간 :</label>
+                    <input type="text" id="rtime">
+                </p>
+                <p>
+                    <input type="button" value="계산하기">
+                </p>
+                <div id="resoltdv"></div>
+            </form>-->
+        </div>
+    </div>
+    
+    <!--<div class="calculator" style="float:left">
+        <form name="pricecal">
+            <p>
+                <label for="price">시급 :</label>
+                <input type="text" id="price">
+            </p>
+            <p>
+                <label for="wday">일한날짜 :</label>
+                <input type="text" id="wday">
+            </p>
+            <p>
+                <label for="wtime">일한시간 :</label>
+                <input type="text" id="wtime">
+            </p>
+            <p>
+                <label for="rtime">휴게시간 :</label>
+                <input type="text" id="rtime">
+            </p>
+            <p>
+                <input type="button" value="계산하기">
+            </p>
+            <div id="resoltdv"></div>
+        </form>
+    </div>
+
+    <div class="result">
+        <form name="pricecal" id="pricecal">
+            <p>
+                <label for="price">시급 :</label>
+                <input type="text" id="price">
+            </p>
+            <p>
+                <label for="wday">일한날짜 :</label>
+                <input type="text" id="wday">
+            </p>
+            <p>
+                <label for="wtime">일한시간 :</label>
+                <input type="text" id="wtime">
+            </p>
+            <p>
+                <label for="rtime">휴게시간 :</label>
+                <input type="text" id="rtime">
+            </p>
+            <p>
+                <input type="button" value="계산하기">
+            </p>
+            <div id="resoltdv"></div>
+        </form>
+    </div>-->
+</body>
+</html>

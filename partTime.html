@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>일정 추가2</title>
+    <title>아르바이트 추가</title>
 
     <style>
         /*로그인, 로고*/
@@ -95,16 +95,11 @@
         margin-top: 10px;
         }
         
-        #schedule {
+        #parttime {
             border: solid yellow 1px; /*섹션범위*/
             margin-top: 50px;
         }
 
-        .two {
-            /*margin-left: 100px;*/
-            width: 275px;
-            margin-left: 320px;
-        }
     
     </style>
     <script>
@@ -119,6 +114,11 @@
                     location.href = 'index.html';
                 }
             }
+
+
+        function cal() {
+            document.getElementById('total').innerHTML = '9,160원';
+        }
 
         function add() {
             alert('일정이 추가되었습니다.')
@@ -160,58 +160,38 @@
         </div>
     </aside>
     
-    <section id="schedule" align="center">
+    <section id="parttime" align="center">
+        <h2 align="center">아르바이트 추가</h2>
         <form method="post">
-            <h1 align="center">일정 추가</h1>
-            <input type="date" name="date"> <!--캘린더에서 날짜 클릭하면 그대로 불려오게-->
-            <br><br><br>
-            <div class="two" style="float:left">
-            
-                <h3 align="center">② 추가 정보 입력하기</h3>
-                <hr>
-                <br>
-            
-                <label style="float: left;">
-                    연장수당
-                </label>
-                <br>
-                <input type="number" id="over" name="over" style="width: 89%;">원
-            
-                <br><br>
-            
-                <label style="float: left;">
-                    야간수당
-                </label>
-                <br>
-                <input type="number" id="night" name="night" style="width: 89%;">원
-            
-                <br><br>
-            
-                <label style="float: left;">
-                    휴일수당
-                </label>
-                <br>
-                <input type="number" id="holiday" name="holiday" style="width: 89%;">원
-
-                <br><br>
-            
-                <label style="float: left;">
-                    추가수당
-                </label>
-                <br>
-                <input type="number" id="extra" name="extra" style="width: 89%;">원
-
-                <br><br>
-                <hr>
-                <!--일급 계산해서 [] 안에 보여주게 처리(함수 아직 못만듦)-->
-                <h4 style="text-align: right;">일급 [계산]원</h4>
-                <br>
-                
-                <input type="button" value="이전" onclick="location.href='schedule1.html'" style="float:left">
-                <input type="submit" value="추가" onclick="add()" style="float:right">
-                <br><br><br><br>
-            </div>
+            <table style="margin: auto;">
+                <tr>
+                    <td>
+                        주휴수당
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" name="holidaypay" value="1">포함
+                        </label>
+                        <label>
+                            <input type="radio" name="holidaypay" value="0">미포함
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        세금
+                    </td>
+                    <td>
+                        <select>
+                            <option value="0">미적용</option>
+                            <option value="3.3">3.3%</option>
+                            <option value="9.23">9.23%</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
         </form>
+        <input type="submit" value="다음" onclick="location.href='schedule.html'" style="float:right">
     </section>
 </body>
 </html>

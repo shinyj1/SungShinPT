@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일정 추가</title>
+
+    <style>
+        #scheduler {
+            width: 350px;
+            height: 350px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -175px;
+            margin-top: -175px;
+        }
+    </style>
+</head>
+<body>
+    <div id="scheduler"align="center">
+        <h2 align="center">일정 추가</h2>
+        <form method="post">
+            <label>
+                근무 일자
+                <input type="date"><br>
+                <br>
+            </label>
+
+            <label>
+                근무지 선택
+                <select name='workSite'>
+                    <option selected disabled>선택</option>
+                    <option value='버거킹'>버거킹</option>
+                    <option value='이디야'>이디야</option>
+                    <option value='GS25'>GS25</option>
+                </select><br>
+                <br>
+            </label>
+
+            <label>
+                근무 시간
+                <input type="time" name="start"> -
+                <input type="time" name="end"><br>
+                <br>
+            </label>
+
+            메모
+            <input type="text" name="memo"><br><br><br>
+
+            <input type="button" value="다음" onclick="location.href='calculatorTest.html'" style="float:right">
+        </form>
+    </div>
+</body>
+</html>
