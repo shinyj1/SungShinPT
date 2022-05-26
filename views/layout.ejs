@@ -5,29 +5,15 @@
 	<!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>일정 추가1</title>
-    <!--<link rel="stylesheet" href="/css/common.css" />
-    <link rel="stylesheet" href="/css/schedule1.css" />
-	<link rel="stylesheet" href="/css/schedule2.css" />-->
-	<link href="/css/common.css" rel="stylesheet" type="text/css">
-	<link href="/css/schedule1.css" rel="stylesheet" type="text/css">
-	<link href="/css/schedule2.css" rel="stylesheet" type="text/css">
-	<!--</head>-->
-	<!--<body>-->
-	<script>
-		<% function login() {%>
-				<% var id = document.querySelector('#id'); %>
-				<% var pw = document.querySelector('#pw'); %>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/schedule1.css">
+	<link rel="stylesheet" href="/css/schedule2.css">
+    <script src="/js/schedule1.js"></script>
+    <script src="/js/schedule2.js"></script>
 
-				<% if (id.value == "" || pw.value == "") { %>
-					<% alert("로그인 할 수 없습니다.") %>
-				<% } %>
-				<% else { %>
-					<% location.href = '/index'; %>
-						<% } %>
-				<% } %>
-	</script>
 </head>
-	<body>
+
+<body>
     <header>
         <div class="loginBar">
             <div class="loginBarBox">
@@ -52,7 +38,7 @@
             <input type="button" id="btnSchedule" value="채팅">
         </div>
         <div class="addSchedule2">
-            <input type="button" id="btnSchedule" value="일정추가">
+            <input type="button" id="btnSchedule" value="일정추가" onclick="location.href='/schedule1';">
         </div>
     </nav>
     
