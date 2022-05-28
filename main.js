@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
 app.get("/schedule1", homeController.showscdl1);
 app.get("/schedule2", homeController.showscdl2);
 
-app.get("/test", homeController.test);
+app.get("/test", homeController.testEnv);
 
 app.use(errorController.pageNotFoundError);
 app.use(errorController.internalServerError);
