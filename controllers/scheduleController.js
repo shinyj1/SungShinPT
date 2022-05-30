@@ -1,5 +1,18 @@
 const db = require("../dbconnection"),
-getScdl1Params = body => {
+getScheduleParams = body => {
+    return {
+        wage : body.wage,
+        startTime : body.startTime,
+        endTime : body.endTime,
+        isCovered : body.isCovered,
+        rest : body.rest,
+        overPay : body.overPay,
+        night : body.night,
+        holiday : body.holiday,
+        extra : body.extra
+    };
+}
+/*getScdl1Params = body => {
     return {
         wage : body.wage,
         startTime : body.startTime,
@@ -15,7 +28,7 @@ getScdl2Params = body => {
         holiday : body.holiday,
         extra : body.extra
     };
-};
+};*/
 
 
 /*
@@ -26,7 +39,7 @@ exports.showscdl1 = (req, res) => {
     res.render("schedule1", { pt: rows });
     res.render("schedule1");
 };
-*/
+
 exports.showscdl2 = (req, res) => {
     res.render("schedule2");
 };
@@ -36,17 +49,30 @@ exports.testScdl = async (req, res) => {
     let sql = 'SELECT * FROM parttime where ptMemberId=2';
     let [rows, fields] = await db.query(sql);
     //console.log(rows);
-    res.render("schedule1", { pt: rows });
+    res.render("addSchedule", { pt: rows });
 };
-/*
+*/
 module.exports = {
-    testScdl : async (req, res, next) => {
+    addSchedule : async (req, res) => {
         let sql = 'SELECT * FROM parttime where ptMemberId=2';
         let [rows, fields] = await db.query(sql);
         //console.log(rows);
-        res.render("schedule1", { pt: rows });
-        next();
+        res.render("addSchedule", { pt: rows });
     },
+    addScheduleClear : async (req, res) => {
+        try {
+            let scdl = getScheduleParams(req.body);
+            let sql = "INSERT INTO schedule(scdlMemId, scdlPtId, isCovered, startTime, endTime, holiday, overPay, rest, night, extra, wage) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            let params = [2, 4, scdl.isCovered, scdl.startTime, scdl.endTime, scdl.holiday, scdl.overPay, scdl.rest, scdl.night, scdl.extra, scdl.wage];
+            await db.query(sql, params);
+            res.render("submit");
+        } catch (err) {
+            res.status(500).send({
+                message: err.message
+            });
+        }
+    }
+    /*
     saveScdl1 : async (req, res, next) => {
         let scdl1Params = await getScdl1Params(req.body);
         res.locals.wage = parseInt(scdl1Params.wage);
@@ -65,5 +91,5 @@ module.exports = {
         await db.query(sql, params);
         res.render("submit");
     }
-}
-*/
+    */
+};

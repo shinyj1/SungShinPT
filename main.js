@@ -21,7 +21,8 @@ app.get("/", (req, res) => {
 	res.render("index");
 });
 
-app.get("/schedule",scheduleController.testScdl);
+app.get("/addSchedule",scheduleController.addSchedule);
+app.post("/addScheduleClear", scheduleController.addScheduleClear)
 //app.get("/schedule1", scheduleController.testScdl);
 //app.get("/schedule2", homeController.showscdl2);
 //app.post("/addSchedule1", scheduleController.saveScdl1);
