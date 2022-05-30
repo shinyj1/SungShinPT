@@ -1,6 +1,7 @@
 const express = require("express"),
   app = express(),
   homeController = require("./controllers/homeController"),
+  scheduleController = require("./controllers/scheduleController"),
   errorController = require("./controllers/errorController"),
   layouts = require("express-ejs-layouts"),
 	path = require('path');
@@ -20,8 +21,11 @@ app.get("/", (req, res) => {
 	res.render("index");
 });
 
-app.get("/schedule1", homeController.showscdl1);
-app.get("/schedule2", homeController.showscdl2);
+app.get("/schedule",scheduleController.testScdl);
+//app.get("/schedule1", scheduleController.testScdl);
+//app.get("/schedule2", homeController.showscdl2);
+//app.post("/addSchedule1", scheduleController.saveScdl1);
+//app.post("/addScheduleClear", scheduleController.addSchedule);
 
 app.get("/test", homeController.testEnv);
 

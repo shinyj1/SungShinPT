@@ -6,7 +6,7 @@
 
 <body>
 <section id="schedule" align="center">
-    <form method="post">
+    <form action="/addScheduleClear" method="post">
         <h1 align="center">일정 추가</h1>
         <input type="date" name="date"> <!--캘린더에서 날짜 클릭하면 그대로 불려오게-->
         <br><br><br>
@@ -20,7 +20,7 @@
                 연장수당
             </label>
             <br>
-            <input type="number" id="over" name="over" style="width: 89%;">원
+            <input type="number" id="over" name="overPay" style="width: 89%;">원
         
             <br><br>
         
@@ -52,7 +52,7 @@
             <h4 style="text-align: right;">일급 [계산]원</h4>
             <br>
             
-            <input type="button" value="이전" onclick="location.href='/schedule1'" style="float:left">
+            <input type="button" value="이전" onclick="history.back(-1);" style="float:left">
             <input type="submit" value="추가" onclick="add()" style="float:right">
             <br><br><br><br>
         </div>
