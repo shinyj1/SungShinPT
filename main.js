@@ -4,7 +4,11 @@ const express = require("express"),
   scheduleController = require("./controllers/scheduleController"),
   errorController = require("./controllers/errorController"),
   layouts = require("express-ejs-layouts"),
-	path = require('path');
+	path = require('path'),
+  db = require("./models/index"),
+  models = require("./models");
+
+db.sequelize.sync();
 
 app.set("view engine", "ejs");
 app.set("port", process.env.PORT || 80);
