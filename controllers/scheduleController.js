@@ -39,7 +39,7 @@ module.exports = {
     addScheduleClear : async (req, res) => {
         try {
             let scdl = getScheduleParams(req.body);
-            const scheduele = await Schedule.create({
+            const schedule = await Schedule.create({
                 scdlMemId: scdl.scdlMemId,
                 scdlPtId: scdl.scdlPtId,
                 isCovered: scdl.isCovered,
@@ -51,13 +51,38 @@ module.exports = {
                 night: scdl.night,
                 extra: scdl.extra,
                 wage: scdl.wage
-            })
-            console.log(scheduele.endTime);
+            });
+            console.log(schedule.endTime);
             res.render("submit");
         } catch (err) {
             res.status(500).send({
                 message: err.message
             });
         }
+        /*
+        try {
+            Schedule.create({
+                scdlMemId: req.body.scdlMemId,
+                scdlPtId: req.body.scdlPtId,
+                isCovered: req.body.isCovered,
+                startTime: req.body.startTime,
+                endTime: req.body.endTime,
+                holiday: req.body.holiday,
+                overPay: req.body.overPay,
+                rest: req.body.rest,
+                night: req.body.night,
+                extra: req.body.extra,
+                wage: req.body.wage
+            })
+                .then(result => {
+                    res.render("submit");
+                })
+
+        } catch (err) {
+            res.status(500).send({
+                message: err.message
+            });
+        }
+        */
     }
 };

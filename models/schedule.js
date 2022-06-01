@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-    const scheduele = sequelize.define("schedule", {
+    const schedule = sequelize.define("schedule", {
         idSchedule: {
             type: Sequelize.INTEGER,
             autoIncrement : true,
@@ -61,7 +61,9 @@ module.exports = (sequelize, Sequelize) => {
         }
     },
     {
-        timestamps: false
+        timestamps: false,
+        freezeTableName: true,
+        tableName : "schedule"
     });
-    return scheduele;
+    return schedule;
 }
