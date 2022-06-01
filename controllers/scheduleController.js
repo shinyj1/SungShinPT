@@ -52,7 +52,6 @@ module.exports = {
                 extra: scdl.extra,
                 wage: scdl.wage
             });
-            console.log(schedule.endTime);
             res.render("submit");
         } catch (err) {
             res.status(500).send({
